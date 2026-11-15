@@ -1,0 +1,65 @@
+Sample data will be taken from `./sample/'.  All pairs of matching
+(.in, .ans) files there will be used as sample data, in alphabetical
+order by file name.  This data will be displayed in the problem
+statement.
+
+Secret test data will be taken from `./secret/'. All pairs of matching
+(.in, .ans) files there will be used to test each
+submission. Optionally a text file (with filename extension .txt)
+describing the purpose of an input file may be present. For each .txt
+file there must be a matching (.in,.ans) pair.
+
+
+** Sample test cases **
+1. sample_added_edge : represents a graph that is one "missing" edge away from giving a 
+    valid Hamiltonian path.
+2. sample_success : represents a valid graph that contains a Hamiltonian path.
+3. sample_cycle : represents a graph that contains a cycle somewhere, which should 
+    be detected by the solution.
+
+** Secret test cases **
+
+- TLE / large input test cases : 
+    1. tle_success : a valid graph containing 120 vertices, and 5282 edges, which 
+        should break "naive" solutions to this problem.
+    2. tle_cycle_1 : an invalid graph containing 120 vertices and 4132 edges and 
+        containing a cycle somewhere in the graph, which should be detected by the solution.
+    3. tle_added_edge : a graph containing 120 nodes and 3444 edges that is just one
+        edge away from a Hamiltonian path.
+    4. tle_cycle_2 : an invalid graph containing 120 vertices and 4488 edges and 
+        containing a cycle somewhere in the graph, but is also one edge away from a 
+        Hamiltonian path. The solution should still be "IMPOSSIBLE" since the cycle should 
+        be detected.
+    5. tle_multiple_missing : a graph that would need MORE than 1 edge to have a 
+        Hamiltonian path. This should also output "IMPOSSIBLE".
+
+- Edge cases / Small handmade cases: 
+    6. single_node : a graph containing only a single node. Should give a 
+        Hamiltonian path of just "1".
+    7. two_nodes_cycle : a graph containing two nodes, and two edges, which should 
+        give "IMPOSSIBLE".
+    8. three_nodes_added_edge : a graph containing three nodes, and two edges, 
+        with a missing edge from the Hamiltonian path. 
+    9. bare_path : a graph containing just a bare Hamiltonian path.
+    10. full_cycle : a graph containing a full cycle.
+
+- Normal random cases : 
+    11. success_25 : graph containing 25 vertices and a valid Hamiltonian path.
+    12. success_50 : graph containing 50 vertices and a valid Hamiltonian path.
+    13. cycle_25 : graph containing 25 vertices and a cycle (should give "IMPOSSIBLE")
+    14. cycle_50 : graph containing 50 vertices and a cycle (should give "IMPOSSIBLE")
+    15. missing_edge_25 : graph containing 25 vertices and is an edge away from having a 
+        Hamiltonian path.
+    16. missing_edge_50 : graph containing 50 vertices and is an edge away from having a 
+        Hamiltonian path.
+
+- Complicated random cases : 
+    17. multiple_missing_25 : graph containing 25 vertices and is multiple edges away 
+        from having a Hamiltonian path (should give "IMPOSSIBLE").
+    18. multiple_missing_50 : graph containing 50 vertices and is multiple edges away 
+        from having a Hamiltonian path (should give "IMPOSSIBLE").
+    19. cycle_missing_edge_25 : graph containing 25 vertices and is an edge away from having a 
+        Hamiltonian path. However, it has a cycle so it should give "IMPOSSIBLE".
+    20. cycle_missing_edge_50 : graph containing 50 vertices and is an edge away from having a 
+        Hamiltonian path. However, it has a cycle so it should give "IMPOSSIBLE".
+    
