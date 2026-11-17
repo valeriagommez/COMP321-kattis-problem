@@ -168,9 +168,9 @@ def make_multi_missing_edges(n):
 if __name__ == "__main__" : 
     #### for the 'sample' test cases (3 total) :
     # 1 test case : successful hamiltonian path
-    # sorted_edges, topological_order, _ = make_hamiltonian(7)
-    # create_input("sample", "sample_hamiltonian", 7, sorted_edges)
-    # create_output("sample", "sample_hamiltonian", "success", topological_order)
+    sorted_edges, topological_order, _ = make_hamiltonian(7)
+    create_input("sample", "sample_success", 7, sorted_edges)
+    create_output("sample", "sample_success", "success", topological_order)
 
     # 1 test case : graph with a cycle ("IMPOSSIBLE")
     # sorted_edges = make_cycle_in_hamiltonian(5)
@@ -192,9 +192,9 @@ if __name__ == "__main__" :
     # create_input("secret", "tle_cycle_1", 120, sorted_edges)
     # create_output("secret", "tle_cycle_1", "impossible")
 
-    sorted_edges, removed_edge = make_missing_edge(120)
-    create_input("secret", "tle_added_edge", 120, sorted_edges)
-    create_output("secret", "tle_added_edge", "add_edge", None, removed_edge)
+    # sorted_edges, removed_edge = make_missing_edge(120)
+    # create_input("secret", "tle_added_edge", 120, sorted_edges)
+    # create_output("secret", "tle_added_edge", "add_edge", None, removed_edge)
 
     # sorted_edges, _ = make_cycle_missing_edge(120)
     # create_input("secret", "tle_cycle_2", 120, sorted_edges)
@@ -235,7 +235,3 @@ if __name__ == "__main__" :
     #     create_input("secret", name, node, sorted_edges)
     #     create_output("secret", name, "impossible")
     
-
-    # 5 test cases : graphs with a cycle ("IMPOSSIBLE")
-    # 5 test cases : graphs with 2 SCCs ("POSSIBLE")
-    # 2 test cases : graphs with 3 SCCs ("IMPOSSIBLE")
