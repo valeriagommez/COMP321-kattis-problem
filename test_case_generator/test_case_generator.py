@@ -101,7 +101,6 @@ def make_cycle_in_hamiltonian(n) :
     # print(sorted_edges)
     return sorted(edge_set)
 
-
 def make_missing_edge(n) : 
     # make a graph with a hamiltonian path
     sorted_edges, _, hamiltonian_edges = make_hamiltonian(n)
@@ -150,7 +149,6 @@ def make_cycle_missing_edge(n):
 
     return sorted(edge_set), removed_edge
 
-
 def make_multi_missing_edges(n):
     sorted_edges, _, hamiltonian_edges = make_hamiltonian(n)
 
@@ -168,8 +166,11 @@ def make_multi_missing_edges(n):
 if __name__ == "__main__" : 
     #### for the 'sample' test cases (3 total) :
     # 1 test case : successful hamiltonian path
-    sorted_edges, topological_order, _ = make_hamiltonian(7)
-    create_input("sample", "sample_success", 7, sorted_edges)
+    sorted_edges, topological_order, hamiltonian_path = make_hamiltonian(5)
+    # print(sorted_edges)
+    # print(topological_order)
+    # print(hamiltonian_path)
+    create_input("sample", "sample_success", 5, sorted_edges)
     create_output("sample", "sample_success", "success", topological_order)
 
     # 1 test case : graph with a cycle ("IMPOSSIBLE")
