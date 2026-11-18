@@ -14,7 +14,8 @@ n, m = first_line.split()
 
 n = int(n)
 m = int(m)
-assert 1 <= (n + m) <= 10**4 # explicit constraint from the problem description
+assert 1 <= n <= 10**4 # explicit constraint from the problem description
+assert 0 <= m <= 10**4 # explicit constraint from the problem description
 
 unique_edges = set()
 n_nodes = set()
