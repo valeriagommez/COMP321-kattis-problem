@@ -8,31 +8,35 @@
 import sys
 import re
 
-n_line = sys.stdin.readline()
-print(repr(n_line)) # useful for debugging to see where we have read
-assert re.match('^[1-9][0-9]*\n$', n_line) # note: no leading zeros
-n = int(n_line)
-assert 1 <= n <= 100
+first_line = sys.stdin.readline()
+assert re.fullmatch(r'[1-9][0-9]* (0|[1-9][0-9]*)\n?', first_line) # 2 space separated integers (number of nodes and number of edges)
+n, m = first_line.split()
 
-unique_strings = set()
-for _ in range(n):
-    case_line = sys.stdin.readline()
-    print(repr(case_line)) # useful for debugging to see where we have read
-    # check the line syntax (string, integer, real)
-    assert re.match('^[a-z]{1,20} (0|-?[1-9][0-9]{0,2}) (0|-?[1-9][0-9]?)(\.[0-9]{1,3})?\n$', case_line)
+n = int(n)
+m = int(m)
+assert 1 <= (n + m) <= 10**4 # explicit constraint from the problem description
 
-    # parse the line
-    s, i, f = case_line.split()
-    assert -100 <= int(i) <= 100
-    assert -10.0 <= float(f) <= 10.0
+unique_edges = set()
+n_nodes = set()
+for _ in range(m):
+    edge_input = sys.stdin.readline()
+    assert re.fullmatch(r'[1-9][0-9]* ([1-9][0-9]*)\n?', edge_input) # edge represented as 2 space separated integers (nodes), must have m edges
+    n1, n2 = edge_input.split()
+    n1 = int(n1)
+    n2 = int(n2)
+    assert n1 != n2 # edges have different origin and destination
 
-    # verify string uniqueness
-    assert s not in unique_strings
-    unique_strings.add(s)
+    # verify edge uniqueness
+    assert (n1, n2) not in unique_edges
+    unique_edges.add((n1, n2))
+
+    # verify count of nodes (max n unique nodes)
+    n_nodes.add(n1)
+    n_nodes.add(n2)
+    assert len(n_nodes) <= n
 
 # ensure no extra input
 assert sys.stdin.readline() == ''
 
-# if we get here, all is well; use exit code 42.
+# if we get here, all is well
 sys.exit(42)
-
