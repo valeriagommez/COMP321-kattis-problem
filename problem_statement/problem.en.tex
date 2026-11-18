@@ -15,29 +15,57 @@
 
 \begin{document}
 
-\problemname{Title of the Problem Here}
+\problemname{Spider-Man's Top Secret Operation}
 
 % Example use of the \illustration command
-% \illustration{0.3}{filename.jpg}{Photo by \href{url_here}{link text here, e.g. author name}}
+\illustration{0.6}{spiderman.jpeg}{\href{https://www.cbr.com/preview-amazing-spider-man-1-fcbd/}{Amazing Spider-Man FCBD Story Art by Ryan Ottley}}
 
-Put the problem story here. Here are some common issues to keep in mind as you edit:
-
-\begin{itemize}
-    \item Use \LaTeX{} math mode for (most) numbers. The few exceptions are for years (e.g., 2019) or whenever a number is part of a string token.
-    \item For numbers $1\,000$ or larger, use thousands separator \verb|\,|. So, for example, one million would be $1\,000\,000$.
-    \item Write in active voice (i.e., avoid passive voice).
-    \item Write in present tense (avoid the word \texttt{will}, especially in the input description). For example, prefer: ``Input starts with an integer $n$ followed by $n$ lines...'' rather than ``Input \emph{will} start with an integer $n$, then \emph{will} come $n$ lines...''.
-\end{itemize}
+Spider-Man is the hero of New York City, flying from crime scene to crime scene to catch bad guys and keep the city safe. NYC is not exactly known as a peaceful city; having become a trusted partner of the NYPD to help them keep up with the high crime rate, he has been helping uncover a large-scale crime ring.\newline
+Every day, the NYPD sends Spider-Man a list of locations from which he must extract sensitive information for the day. Every location provided has critical information to be retrieved, thus every location must be visited. Due to the highly secretive nature of the operation and to prevent being busted by the bad guys, he must make use of secret passageways available that take him from a given location to another given location.\newline
+Spider-Man has become a local legend for city residents. Word travels fast in NYC, and every time he is spotted, people flock to the area within minutes, hoping to take a photo with him. He must never go back to a spot he has already inspected because citizens always arrive on site right after he leaves a location. He must avoid citizens at all cost because getting his whereabouts leaked would compromise the operation, and he could lose his job!\newline
+Knowing how important this job is for our beloved hero, Doctor Strange gave him the ability to teleport from one place to another once per day. If exactly one more passage would be needed, he could make use of his teleportation ability and complete the operation.
+In which order should Spider-Man visit all given locations without jeopardizing his top secret mission? 
 
 \section*{Input}
 
-Put the input format (syntax) description here, including constraints on all input values. That includes number ranges, the maximum number of digits after the decimal point for real values, the character sets and length ranges for strings, etc. If possible, always give a count of the number of items that follow (test cases, e.g.) rather than delimiting with a token or EOF. The input format should be fairly precise, so that the reader knows exactly what to expect (it should usually be easy to write a program to read the input using line-oriented or token-oriented parsing).
+\begin{itemize}
+    \item There is a single test case in the input. Each test case will begin with a line with two integers $n$ and $m$ ($1 \leqslant n \leqslant 10^4$, $0 \leqslant m \leqslant 10^4$), the number of locations and the number of one-way passageways.
+    \item Each of the next $m$ lines contains two distinct integers $x$ and $y$, meaning there is a passageway from $x$ to $y$.
+\end{itemize}
 
 \section*{Output}
 
-Describe the output. Kattis output judging is not sensitive to case changes or space changes (including line formatting and blank lines). Try to maintain this flexibility with your problem—do not be overly precise or prescriptive here in the output formatting description. However, if exact textual matching or floating-point precision is required, do specify the constraints (e.g., ``your answer should be correct within a relative or absolute error of $10^{-3}$'').
+If there is an ordering of all $n$ locations such that consecutive locations are connected by a passageway and Spider-Man doesn’t cross paths with citizens, print the $n$ locations in that order on one line. This ordering is unique.\newline
+Otherwise, if exactly one teleport (from the current location to any unvisited location, usable between any two consecutive locations in the order) makes a valid ordering possible, print “POSSIBLE”, then on a second line print $x$ and $y$, the location Spider-Man teleports from and the location he teleports to. If several pairs work, print any of them. \newline
+Otherwise, output “IMPOSSIBLE”.
 
 \section*{Sample Input 1	Sample Output 1}
-Please provide at least one sample Input and Output for your problem.
+5 7\hspace{10em}2 1 4 3 5\newline
+1 4\newline
+1 5\newline
+2 1\newline
+2 4\newline
+3 5\newline
+4 3\newline
+4 5\newline
+
+\section*{Sample Input 2	Sample Output 2}
+5 7\hspace{10em}IMPOSSIBLE\newline
+1 3\newline
+1 5\newline
+2 1\newline
+2 3\newline
+4 1\newline
+4 2\newline
+5 2
+
+\section*{Sample Input 3	Sample Output 3}
+5 6\hspace{10em}POSSIBLE\newline
+1 2\hspace{10em}3 4\newline
+1 3\newline
+1 5\newline
+2 5\newline
+4 2\newline
+4 5
 
 \end{document}
