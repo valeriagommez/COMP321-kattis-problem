@@ -38,7 +38,7 @@ file there must be a matching (.in,.ans) pair.
         Hamiltonian path of just "1".
     7. two_nodes_cycle : a graph containing two nodes, and two edges, which should 
         give "IMPOSSIBLE".
-    8. three_nodes_added_edge : a graph containing three nodes, and two edges, 
+    8. three_nodes_added_edge : a graph containing three nodes, and one edge, 
         with a missing edge from the Hamiltonian path. 
     9. bare_path : a graph containing just a bare Hamiltonian path.
     10. full_cycle : a graph containing a full cycle.
