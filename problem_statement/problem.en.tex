@@ -29,14 +29,19 @@ In which order should Spider-Man visit all given locations without jeopardizing 
 \section*{Input}
 
 \begin{itemize}
-    \item There is a single test case in the input. Each test case will begin with a line with two integers $n$ and $m$ ($1 \leqslant n \leqslant 10^4$, $0 \leqslant m \leqslant 10^4$), the number of locations and the number of one-way passageways.
+    \item There is a single test case in the input. Each test case will begin with a line with two integers $n$ and $m$ ($n \geqslant 1, m \geqslant 0, 1 \leqslant n + m \leqslant 10^4$), the number of locations and the number of one-way passageways.
     \item Each of the next $m$ lines contains two distinct integers $x$ and $y$, meaning there is a passageway from $x$ to $y$.
 \end{itemize}
 
 \section*{Output}
 
-If there is an ordering of all $n$ locations such that consecutive locations are connected by a passageway and Spider-Man doesn’t cross paths with citizens, print the $n$ locations in that order on one line. This ordering is unique.\newline
-Otherwise, if exactly one teleport (from the current location to any unvisited location, usable between any two consecutive locations in the order) makes a valid ordering possible, print “POSSIBLE”, then on a second line print $x$ and $y$, the location Spider-Man teleports from and the location he teleports to. If several pairs work, print any of them. \newline
+If there is an ordering of all $n$ locations such that consecutive locations are connected by a 
+passageway and Spider-Man doesn’t cross paths with citizens, print the $n$ locations in that order on one line. 
+This ordering is unique.\newline
+Otherwise, if exactly one teleport (from the current location to any unvisited location, 
+usable between any two consecutive locations in the order) makes a valid ordering possible, 
+print “POSSIBLE”, then on a second line print $x$ and $y$, the location Spider-Man teleports from and 
+the location he teleports to. The pair is guaranteed to be unique. \newline
 Otherwise, output “IMPOSSIBLE”.
 
 \section*{Sample Input 1	Sample Output 1}
