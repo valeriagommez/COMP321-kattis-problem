@@ -63,7 +63,7 @@ if check_ordering(ord, adj):
         print(node+1, end=' ')  # convert from 0-index to 1-index
     exit(0)
 
-# add every single possible edge and check that this results in a DAG with Hamiltonian (way too slow, in the order of
+# add every single possible edge and check if it results in a DAG with Hamiltonian (way too slow, in the order of
 # O((V+E)(V^2))
 for x in range(n):
     for y in range(n):
