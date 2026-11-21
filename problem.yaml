@@ -1,0 +1,14 @@
+license: public domain
+uuid: 5f4a2005-6b07-4ced-85ed-44ece6a5d4f6
+
+type: pass-fail
+name: Spider-Man's Top Secret Operation
+author: Marie-Christine Sapoundjieva, Zachary Lukan, Valeria Gomez Ladino
+source: COMP-321 Problem Design
+
+validation: default
+
+limits:
+  memory: 2048
+
+time-sec: 1
